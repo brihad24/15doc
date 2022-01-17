@@ -2,33 +2,33 @@ import java.util.*;
 
 public class AliceBob {
     public static void main(String[] args){
-        int m1 = 0;
-        int m2 = 0;
+        int  Alice[] = new int[3];
+        int  Bob[] = new int[3];
+        int marks[] = {0,0};
         Scanner sc = new Scanner(System.in);
 
+        for (int i=0; i<3; i++){
+            Alice[i] = sc.nextInt();
+        }
+
+        for (int i=0; i<3; i++){
+            Bob[i] = sc.nextInt();
+        }
+
         for (int i=0; i<3; i++)
-        {   
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-
-
-            if(a>b)
+        {
+            if(Alice[i]>Bob[i])
             {
-                m1 = m1+1;
+                marks[0] = marks[0]+1;
             }
             
-            if(a<b)
+            if(Alice[i]<Bob[i])
             {
-                m2 = m2+1;
-            }
-
-            if(a == b)
-            {
-                m1 = m1;
-                m2 = m2;
+                marks[1] = marks[1]+1;
             }
         }
-        System.out.println(m1);
-        System.out.println(m2);
+        for(int i=0;i<2;i++){
+        System.out.println(marks[i]+" ");
+        }
     }    
 }
