@@ -7,21 +7,23 @@ public class TimeConversion {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String time = sc.nextLine();
-        String a = String.valueOf(time.charAt(8));
-        String h1 = String.valueOf(time.charAt(0));
-        String h2 = String.valueOf(time.charAt(1));
-        int hour = Integer.parseInt(h1.concat(h2));
+        Character a = time.charAt(8);
+        String h = String.valueOf(time.charAt(0)).concat(String.valueOf(time.charAt(1)));
+        String m = String.valueOf(time.charAt(3)).concat(String.valueOf(time.charAt(4)));
+        String s = String.valueOf(time.charAt(6)).concat(String.valueOf(time.charAt(7)));
+        int hour = Integer.parseInt(h);
 
-        if(a.equals('A'))
+        if(a.equals('P') && hour < 12)
         {
-            System.out.println(time);
+            hour = hour +12;
+            h = String.valueOf(hour);
         }
 
-        if(a.equals('P'))
+        if(a.equals('A') && hour == 12)
         {
-            hour = hour + 12; 
-            String t = String.valueOf(hour);
-            System.out.println(time.replace(t,h1.concat(h2)));
+            h = "00";
         }
+        
+        System.out.println(h+":"+m+":"+s);
     }
 }
