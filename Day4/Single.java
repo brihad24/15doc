@@ -1,38 +1,24 @@
 //Question: https://leetcode.com/problems/single-number/
-//Logical bug, working on it
 
 import java.util.*;
 
 public class Single {
     public static void main(String[] args){
-        try{
-            Scanner sc = new Scanner(System.in);
-            int n = sc.nextInt();
-            int[] nums = new int[n];
-            int sum = 0;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] nums = new int[n];
+        int result = 0;
 
-            for(int i=0; i<n; i++)
-            {
-                nums[i] = sc.nextInt();
-            }
-
-            for(int i=0; i<n; i++)
-            {
-                for(int j=1; j<n; j++)
-                {
-                    if(nums[i] != nums[j])
-                    {
-                        sum = sum + 1;
-                    }
-                }
-            }
-
-            System.out.println(sum);
-        }
-
-        catch(Exception e)
+        for (int i =0; i<nums.length;i++)
         {
-            System.out.println(e);
+            nums[i] = sc.nextInt();
         }
+
+        for (int i =0; i<nums.length;i++)
+        {
+            result ^= nums[i];
+        }
+
+        System.out.println(result);
     }
 }
