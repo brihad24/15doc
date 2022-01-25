@@ -8,7 +8,7 @@ public class Basketball {
         int games = sc.nextInt();
         int[] score = new int[games];
         int a = -1;
-        int b = 10000;
+        long b = 1000000;
         int high = 0;
         int low = 0;
 
